@@ -1,13 +1,15 @@
 package com.example.pablo94.hello;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,5 +55,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButton1Clicked(View v){
         Toast.makeText(getApplicationContext(),"시작버튼",Toast.LENGTH_LONG).show();
+    }
+
+    public void onButton2Clicked(View v){
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.naver.com"));
+        startActivity(myIntent);
+    }
+
+    public void onButton3Clicked(View v){
+        Intent myIntent = new Intent(Intent.ACTION_VIEW,Uri.parse("010-1000-1000"));
+        startActivity(myIntent);
     }
 }
