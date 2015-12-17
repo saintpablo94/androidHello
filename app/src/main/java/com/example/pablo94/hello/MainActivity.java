@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,17 +52,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onButton1Clicked(View v){
-        Toast.makeText(getApplicationContext(),"시작버튼",Toast.LENGTH_LONG).show();
-    }
-
     public void onButton2Clicked(View v){
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.naver.com"));
         startActivity(myIntent);
     }
 
     public void onButton3Clicked(View v){
-        Intent myIntent = new Intent(Intent.ACTION_VIEW,Uri.parse("010-1000-1000"));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("010-1000-1000"));
         startActivity(myIntent);
+    }
+
+    public void onButton4Clicked(View v){
+        Intent intent = new Intent(getApplicationContext(), NewActivity.class);
+        startActivity(intent);
     }
 }
